@@ -736,7 +736,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_metadata_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_18b5d788fc2d065f306b0327ed67f33f1e6084cc5af7d488fc83fc927eacb1f7');
+        $instance->setNamespace('sf2orm_default_78a08c342c96ce779136da49c7ecf829f256f49f20c98cc49b770139b6acb5cf');
 
         return $instance;
     }
@@ -753,7 +753,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_query_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_18b5d788fc2d065f306b0327ed67f33f1e6084cc5af7d488fc83fc927eacb1f7');
+        $instance->setNamespace('sf2orm_default_78a08c342c96ce779136da49c7ecf829f256f49f20c98cc49b770139b6acb5cf');
 
         return $instance;
     }
@@ -770,7 +770,7 @@ class appDevDebugProjectContainer extends Container
     {
         $this->services['doctrine_cache.providers.doctrine.orm.default_result_cache'] = $instance = new \Doctrine\Common\Cache\ArrayCache();
 
-        $instance->setNamespace('sf2orm_default_18b5d788fc2d065f306b0327ed67f33f1e6084cc5af7d488fc83fc927eacb1f7');
+        $instance->setNamespace('sf2orm_default_78a08c342c96ce779136da49c7ecf829f256f49f20c98cc49b770139b6acb5cf');
 
         return $instance;
     }
@@ -3227,6 +3227,7 @@ class appDevDebugProjectContainer extends Container
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/TwigBundle/Resources/views'), 'Twig');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/swiftmailer-bundle/Resources/views'), 'Swiftmailer');
         $instance->addPath(($this->targetDirs[3].'/vendor/doctrine/doctrine-bundle/Resources/views'), 'Doctrine');
+        $instance->addPath(($this->targetDirs[3].'/src/Zenva/WorkoutBundle/Resources/views'), 'ZenvaWorkout');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views'), 'Debug');
         $instance->addPath(($this->targetDirs[3].'/src/Acme/DemoBundle/Resources/views'), 'AcmeDemo');
         $instance->addPath(($this->targetDirs[3].'/vendor/symfony/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views'), 'WebProfiler');
@@ -3735,6 +3736,7 @@ class appDevDebugProjectContainer extends Container
                 'DoctrineBundle' => 'Doctrine\\Bundle\\DoctrineBundle\\DoctrineBundle',
                 'SensioFrameworkExtraBundle' => 'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle',
                 'AppBundle' => 'AppBundle\\AppBundle',
+                'ZenvaWorkoutBundle' => 'Zenva\\WorkoutBundle\\ZenvaWorkoutBundle',
                 'DebugBundle' => 'Symfony\\Bundle\\DebugBundle\\DebugBundle',
                 'AcmeDemoBundle' => 'Acme\\DemoBundle\\AcmeDemoBundle',
                 'WebProfilerBundle' => 'Symfony\\Bundle\\WebProfilerBundle\\WebProfilerBundle',
@@ -4193,7 +4195,7 @@ class appDevDebugProjectContainer extends Container
 
             ),
             'assetic.java.bin' => '/usr/bin/java',
-            'assetic.node.bin' => '/usr/local/bin/node',
+            'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',
             'assetic.filter.cssrewrite.class' => 'Assetic\\Filter\\CssRewriteFilter',
