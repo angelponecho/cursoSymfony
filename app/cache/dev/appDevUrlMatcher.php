@@ -127,9 +127,13 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // zenva_workout_default_index
-        if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'zenva_workout_default_index')), array (  '_controller' => 'Zenva\\WorkoutBundle\\Controller\\DefaultController::indexAction',));
+        // workout_index
+        if (rtrim($pathinfo, '/') === '/workout') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'workout_index');
+            }
+
+            return array (  '_controller' => 'Zenva\\WorkoutBundle\\Controller\\DefaultController::indexAction',  '_route' => 'workout_index',);
         }
 
         // homepage
