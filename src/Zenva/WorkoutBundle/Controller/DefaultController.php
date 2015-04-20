@@ -5,6 +5,7 @@ namespace Zenva\WorkoutBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Zenva\WorkoutBundle\Entity\Workout;
 
 
 /**
@@ -19,35 +20,17 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $workouts= array(
-            array(
-                'date' => new \DateTime(),
-                'activity' => 'swimming',
-                'hours' => 1
-            ),
+        $workout = new Workout();
+        $workout->setActivity('yoga');
+        $workout->setHours(1);
+        $workout->getOccurrenceDate(new \DateTime());
 
-            array(
-                'date' => new \DateTime(),
-                'activity' => 'yoga',
-                'hours' => 2
-            ),
-
-            array(
-                'date' => new \DateTime(),
-                'activity' => 'gym',
-                'hours' => 1.5
-            ),
-            array(
-                'date' => new \DateTime(),
-                'activity' => 'running',
-                'hours' => 0.5
-            )
-        );
-
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->persist($workout);
+        $em->flush();
         return array(
-            'workouts' => $workouts,
-            'name' => 'your name',
-            'age' => 99
+
         );
+
     }
 }
