@@ -96,13 +96,16 @@ class Workout
         return $this->occurrenceDate;
     }
 
+
+
+
     public function getHours()
     {
         return $this->hours;
     }
 
-    public function setHours()
+    public function setHours($hours)
     {
-        return $this->hours;
+       $this->hours = $hours;
     }
 }
